@@ -27,6 +27,8 @@
         "build": "encore production --progress"
     },
     "dependencies": {
+        "@headlessui/vue": "^1.7.12",
+        "@heroicons/vue": "^2.0.17",
         "datatables.net-bs5": "^1.13.4",
         "datatables.net-dt": "^1.13.4",
         "datatables.net-vue3": "^2.1.0"
