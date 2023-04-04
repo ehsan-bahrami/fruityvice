@@ -39,28 +39,73 @@ class FruitRepository extends ServiceEntityRepository
         }
     }
 
-//    /**
-//     * @return Fruit[] Returns an array of Fruit objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('f')
-//            ->andWhere('f.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('f.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    /**
+     * @return Fruit[] Returns an array of Fruit objects
+     */
+    public function findByFavoriteField(bool $value): array
+    {
+        return $this->createQueryBuilder('f')
+            ->andWhere('f.favorite = :favorite')
+            ->setParameter('favorite', $value)
+            ->orderBy('f.id', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
 
-//    public function findOneBySomeField($value): ?Fruit
-//    {
-//        return $this->createQueryBuilder('f')
-//            ->andWhere('f.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+    /**
+     * @return array Returns an array of Fruit array
+     */
+    public function convertFruitEntitiesToDataTableArray(array $fruits): array
+    {
+        return array_map(
+            fn ($value) => [
+                $value->getName(),
+                $value->getFamily(),
+                $value->getCarbohydrates(),
+                $value->getProtein(),
+                $value->getFat(),
+                $value->getCalories(),
+                $value->getSugar(),
+                $value->isFavorite(),
+            ],
+            $fruits
+        );
+    }
+
+    /**
+     * @return Fruit|null Returns an Fruit object
+     */
+    public function findByFavoriteFieldAndToggle(int $id): ?Fruit
+    {
+        $fruit = $this->find($id);
+        $fruit->setFavorite(!$fruit->isFavorite());
+        $this->save($fruit, true);
+
+        return $fruit;
+    }
+
+    //    /**
+    //     * @return Fruit[] Returns an array of Fruit objects
+    //     */
+    //    public function findByExampleField($value): array
+    //    {
+    //        return $this->createQueryBuilder('f')
+    //            ->andWhere('f.exampleField = :val')
+    //            ->setParameter('val', $value)
+    //            ->orderBy('f.id', 'ASC')
+    //            ->setMaxResults(10)
+    //            ->getQuery()
+    //            ->getResult()
+    //        ;
+    //    }
+
+    //    public function findOneBySomeField($value): ?Fruit
+    //    {
+    //        return $this->createQueryBuilder('f')
+    //            ->andWhere('f.exampleField = :val')
+    //            ->setParameter('val', $value)
+    //            ->getQuery()
+    //            ->getOneOrNullResult()
+    //        ;
+    //    }
 }
