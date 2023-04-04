@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-	<div {{ vue_component('FruitsDataTableComponent', { 'fruits': fruits } ) }}></div>
+	<a href='/fruit'>Show all fruits</a>
+    <a href='/fruit/favorite'>Show all favorite fruits</a>
 {% endblock %}

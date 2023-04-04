@@ -9,13 +9,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HomeController extends AbstractController
 {
-    #[Route('/home')]
-    public function index(FruitRepository $fruitRepository): Response
+    #[Route('/', name: 'app_home', methods: ['GET'])]
+    public function index(): Response
     {
-        $fruits = $fruitRepository->findAll();
-
-        return $this->render('home.html.twig', [
-            'fruits' => array_map(fn($value) => [$value->getName(), $value->getFamily(), $value->getCarbohydrates(), $value->getProtein(), $value->getFat(), $value->getCalories(), $value->getSugar(), $value->isFavorite(), ], $fruits ),
-        ]);
+        return $this->render('home.html.twig');
     }
 }

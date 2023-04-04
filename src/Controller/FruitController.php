@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class FruitController extends AbstractController
 {
-    #[Route('/fruit', name: 'app_fruit')]
+    #[Route('/fruit', name: 'app_fruit', methods: ['GET'])]
     public function index(FruitRepository $fruitRepository): Response
     {
         $fruits = $fruitRepository->findAll();
@@ -21,7 +21,7 @@ class FruitController extends AbstractController
         ]);
     }
 
-    #[Route('/fruit/favorite', name: 'app_fruit_favorite')]
+    #[Route('/fruit/favorite', name: 'app_fruit_favorite', methods: ['GET'])]
     public function favorite(FruitRepository $fruitRepository): Response
     {
         $fruits = $fruitRepository->findByFavoriteField(true);
@@ -32,7 +32,7 @@ class FruitController extends AbstractController
         ]);
     }
 
-    #[Route('/fruit/toggle-favorite/{id}', name: 'app_fruit_favorite_toggle', requirements: ['id' => '\d+'])]
+    #[Route('/fruit/toggle-favorite/{id}', name: 'app_fruit_favorite_toggle', requirements: ['id' => '\d+'], methods: ['GET'])]
     public function toggleFavorite(int $id, FruitRepository $fruitRepository): JsonResponse
     {
         $fruit = $fruitRepository->findByFavoriteFieldAndToggle($id);
