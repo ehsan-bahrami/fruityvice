@@ -32,10 +32,10 @@ class FruitController extends AbstractController
         ]);
     }
 
-    #[Route('/fruit/toggle-favorite/{id}', name: 'app_fruit_favorite_toggle', requirements: ['id' => '\d+'], methods: ['GET'])]
-    public function toggleFavorite(int $id, FruitRepository $fruitRepository): JsonResponse
+    #[Route('/fruit/toggle-favorite/{name}', name: 'app_fruit_favorite_toggle', requirements: ['name' => '\w+'], methods: ['GET'])]
+    public function toggleFavorite(string $name, FruitRepository $fruitRepository): JsonResponse
     {
-        $fruit = $fruitRepository->findByFavoriteFieldAndToggle($id);
+        $fruit = $fruitRepository->findByFavoriteFieldAndToggle($name);
 
         return $this->json(['fruit' => $fruit]);
     }

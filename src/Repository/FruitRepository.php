@@ -59,14 +59,14 @@ class FruitRepository extends ServiceEntityRepository
     {
         return array_map(
             fn ($value) => [
-                $value->getName(),
-                $value->getFamily(),
-                $value->getCarbohydrates(),
-                $value->getProtein(),
-                $value->getFat(),
-                $value->getCalories(),
-                $value->getSugar(),
-                $value->isFavorite(),
+                'name' => $value->getName(),
+                'family' => $value->getFamily(),
+                'carbohydrates' => $value->getCarbohydrates(),
+                'protein' => $value->getProtein(),
+                'fat' => $value->getFat(),
+                'calories' => $value->getCalories(),
+                'sugar' => $value->getSugar(),
+                'favorite' => $value->isFavorite(),
             ],
             $fruits
         );
@@ -75,9 +75,9 @@ class FruitRepository extends ServiceEntityRepository
     /**
      * @return Fruit|null Returns an Fruit object
      */
-    public function findByFavoriteFieldAndToggle(int $id): ?Fruit
+    public function findByFavoriteFieldAndToggle(string $name): ?Fruit
     {
-        $fruit = $this->find($id);
+        $fruit = $this->findOneBy(['name' => $name]);
         $fruit->setFavorite(!$fruit->isFavorite());
         $this->save($fruit, true);
 

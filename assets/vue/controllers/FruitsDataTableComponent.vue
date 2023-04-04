@@ -66,7 +66,7 @@
                     style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" />
             </div>
             <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-                <DataTable :data="data" class="display">
+                <DataTable :data="fruitData" :columns="columns" class="display">
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -104,7 +104,37 @@ const props = defineProps({
     fruits: Array,
 });
 
-const data = props.fruits;
+const fruitData = props.fruits;
+
+const columns = [
+    {
+        data: 'name',
+    },
+    {
+        data: 'family',
+    },
+    {
+        data: 'carbohydrates',
+    },
+    {
+        data: 'protein',
+    },
+    {
+        data: 'fat',
+    },
+    {
+        data: 'calories',
+    },
+    {
+        data: 'sugar',
+    },
+    {
+        data: 'favorite',
+        "render": function (data, type, row, meta) {
+            return row['favorite'] + ' - <a href="/fruit/toggle-favorite/' + row['name'] + '">Toggle</a>';
+        }
+    },
+];
 
 const navigation = [
     { name: 'Home', href: '/' },
