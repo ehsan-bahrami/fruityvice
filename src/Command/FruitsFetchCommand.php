@@ -20,7 +20,7 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 )]
 class FruitsFetchCommand extends Command
 {
-    const API_URL = 'https://fruityvice.com/api/fruit/all';
+    public const API_URL = 'https://fruityvice.com/api/fruit/all';
     public function __construct(private HttpClientInterface $httpClient, private FruitRepository $fruitRepository, private ValidatorInterface $validator, private MailerInterface $mailer)
     {
         parent::__construct();
@@ -36,7 +36,7 @@ class FruitsFetchCommand extends Command
     {
         $io = new SymfonyStyle($input, $output);
 
-        $response = $this->httpClient->request('GET', Self::API_URL);
+        $response = $this->httpClient->request('GET', self::API_URL);
 
         $this->saveFruits($response);
 
