@@ -72,6 +72,7 @@ class FruitsFetchCommand extends Command
             $fruit->setFat($fruitItem['nutritions']['fat']);
             $fruit->setCalories($fruitItem['nutritions']['calories']);
             $fruit->setSugar($fruitItem['nutritions']['sugar']);
+            $fruit->setFavorite(false);
 
             $errors = $this->validator->validate($fruit);
             if (count($errors) > 0) {
