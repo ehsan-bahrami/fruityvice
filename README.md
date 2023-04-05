@@ -1,9 +1,9 @@
 Demo Fruityvice
 ========================
 
-The "Demo Fruityvice" is a web application powered by Symfony as the backend and Vue.js as the frontend.
+The "Demo [Fruityvice][1]" is a web application powered by Symfony as the backend and Vue.js as the frontend.
 
-It has been develop following the [Symfony Best Practices][1].
+It has been develop following the [Symfony Best Practices][2].
 
 Features
 ------------
@@ -27,14 +27,14 @@ Requirements
   * Composer;
   * NPM;
   * Vue.js 3.2.47 or higher;
-  * and the [usual Symfony application requirements][2].
+  * and the [usual Symfony application requirements][3].
 
 Installation
 ------------
 
 There are 3 different ways of installing this project depending on your needs:
 
-**Step 1.** [Download Composer][5] and use the `composer` binary installed
+**Step 1.** [Download Composer][6] and use the `composer` binary installed
 on your computer to run these commands:
 
 ```bash
@@ -44,7 +44,7 @@ $ cd fruityvice/
 $ composer install
 ```
 
-**Step 2.** [Download Node.js][6] and use the `npm` to run these commands:
+**Step 2.** [Download Node.js][7] and use the `npm` to run these commands:
 
 ```bash
 # you can run this command
@@ -71,7 +71,7 @@ Usage
 
 There are 2 different ways of running this application depending on your needs:
 
-**Option 1.** [Download Symfony CLI][4] and run this command:
+**Option 1.** [Download Symfony CLI][5] and run this command:
 
 ```bash
 $ cd fruityvice/
@@ -81,7 +81,7 @@ $ symfony serve
 Then access the application in your browser at the given URL (<https://localhost:8000> by default).
 
 **Option 2.** Use a web server like Nginx or Apache to run the application
-(read the documentation about [configuring a web server for Symfony][3]).
+(read the documentation about [configuring a web server for Symfony][4]).
 
 On your local machine, you can run this command to use the built-in PHP web server:
 
@@ -106,9 +106,10 @@ $ cd fruityvice/
 $ ./bin/phpunit
 ```
 
-[1]: https://symfony.com/doc/current/best_practices.html
-[2]: https://symfony.com/doc/current/setup.html#technical-requirements
-[3]: https://symfony.com/doc/current/setup/web_server_configuration.html
-[4]: https://symfony.com/download
-[5]: https://getcomposer.org/
-[6]: https://nodejs.org/en/download
+[1]: https://fruityvice.com/
+[2]: https://symfony.com/doc/current/best_practices.html
+[3]: https://symfony.com/doc/current/setup.html#technical-requirements
+[4]: https://symfony.com/doc/current/setup/web_server_configuration.html
+[5]: https://symfony.com/download
+[6]: https://getcomposer.org/
+[7]: https://nodejs.org/en/download
