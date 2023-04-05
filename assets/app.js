@@ -6,12 +6,12 @@
  */
 
 // any CSS you import will output into a single css file (app.css in this case)
-import './styles/app.css';
+import './styles/app.css'
 
 // start the Stimulus application
-import './bootstrap';
+import './bootstrap'
 
-import { registerVueControllerComponents } from '@symfony/ux-vue';
+import { registerVueControllerComponents } from '@symfony/ux-vue'
 
 // Registers Vue.js controller components to allow loading them from Twig
 //
@@ -22,8 +22,8 @@ import { registerVueControllerComponents } from '@symfony/ux-vue';
 // By putting only controller components in `vue/controllers`, you ensure that
 // internal components won't be automatically included in your JS built file if
 // they are not necessary.
-registerVueControllerComponents(require.context('./vue/controllers', true, /\.vue$/));
+registerVueControllerComponents(require.context('./vue/controllers', true, /\.vue$/))
 
 // If you prefer to lazy-load your Vue.js controller components, in order to reduce to keep the JavaScript bundle the smallest as possible,
 // and improve performances, you can use the following line instead:
-//registerVueControllerComponents(require.context('./vue/controllers', true, /\.vue$/, 'lazy'));
+// registerVueControllerComponents(require.context('./vue/controllers', true, /\.vue$/, 'lazy'));
