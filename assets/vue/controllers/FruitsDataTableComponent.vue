@@ -131,7 +131,16 @@ const columns = [
     {
         data: 'favorite',
         "render": function (data, type, row, meta) {
-            return row['favorite'] + ' - <a href="/fruit/toggle-favorite/' + row['name'] + '">Toggle</a>';
+            return '<p class="text-center" id="' +
+                row['name'] +
+                '">' +
+                row['favorite'] +
+                '</p>' +
+                '<button class="flex-none block w-full rounded-full bg-indigo-600 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" onclick="(function() { const response = fetch(\'/fruit/toggle-favorite/' +
+                row['name'] +
+                '\').then(response => response.json()).then(data => {document.getElementById(\'' +
+                row['name'] +
+                '\').innerHTML=data.fruit.favorite;}); })()">Toggle</button>';
         }
     },
 ];
