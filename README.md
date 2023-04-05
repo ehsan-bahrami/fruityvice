@@ -1,7 +1,9 @@
 Demo Fruityvice
 ========================
 
-The "Demo [Fruityvice][1]" is a web application powered by Symfony as the backend and Vue.js as the frontend.
+The "Demo Fruityvice" is a web application powered by Symfony as the backend and Vue.js as the frontend.
+
+It fetches data from [Fruityvice][1], displays them in a data table, filters them and can create a favourite list of fruits.
 
 It has been develop following the [Symfony Best Practices][2].
 
