@@ -5,6 +5,20 @@ The "Demo Fruityvice" is a web application powered by Symfony as the backend and
 
 It has been develop following the [Symfony Best Practices][1].
 
+Features
+------------
+
+  * The Symfony PHP framework for the backend and VueJS 3 for the frontend
+  * A page with all fruits (paginated)
+  * A form to filter fruits by all fields
+  * Each fruit can be added to favorites (up to 10 fruits)
+  * A page with favorite fruits
+  * Display all nutrition facts for all fruits
+  * Installation and startup instructions
+  * Tests
+  * In php follow PSR-12
+  * In JS follow JavaScript Standard Style
+
 Requirements
 ------------
 
