@@ -40,7 +40,8 @@ class FruitsFetchCommand extends Command
 
         $this->saveFruits($response);
 
-        $this->sendEmail();
+        // It has been commented in the demo application. You can set "MAILER_DSN" environment variable and send an email.
+        // $this->sendEmail();
 
         $io->success('All fruits successfully have been fetch and store in the local DB.');
 
