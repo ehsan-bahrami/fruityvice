@@ -47,6 +47,9 @@ $ php bin/console doctrine:database:create
 $ php bin/console doctrine:migrations:migrate
 ```
 
+**Step 4 (optional).** Change "MAILER_DSN" environment variable for enabling the email. Then uncomment line 44 (// $this->sendEmail();) in src\Command\FruitsFetchCommand.php file.
+
+
 Usage
 -----
 
