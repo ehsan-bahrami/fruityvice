@@ -65,7 +65,7 @@
                     style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" />
             </div>
             <div class="mx-auto max-w-4xl py-8 sm:py-16 lg:py-24">
-                <h2 class="text-2xl">Fruits</h2>
+                <h2 class="text-2xl">{{ pathName === '/fruit/favorite' ? 'Favorite fruits' : 'Fruits'}}</h2>
                 <hr class="mb-5">
                 <div id="error-box" class="w-full hidden">
                     <div class="relative block w-full rounded-lg bg-indigo-300 p-4 text-base leading-5 text-white opacity-100 mb-5"
