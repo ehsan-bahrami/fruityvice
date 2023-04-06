@@ -142,11 +142,21 @@ const columns = [
                 '">' +
                 row['favorite'] +
                 '</p>' +
-                '<button class="flex-none block w-full rounded-full bg-indigo-600 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" onclick="(function() { const response = fetch(\'/fruit/toggle-favorite/' +
+                '<button class="flex-none block w-full rounded-full bg-indigo-600 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" onclick="(function() { document.getElementById(\'spinner-'+
+                row['name'] +
+                '\').className = \'\'; const response = fetch(\'/fruit/toggle-favorite/' +
                 row['name'] +
                 '\').then(response => response.json()).then(data => {document.getElementById(\'' +
                 row['name'] +
-                '\').innerHTML=data.fruit.favorite;}).catch(error => {document.getElementById(\'error-box\').className = \'w-full\';}); })()">Toggle</button>';
+                '\').innerHTML=data.fruit.favorite;document.getElementById(\'spinner-'+
+                row['name'] +
+                '\').className = \'hidden\';}).catch(error => {document.getElementById(\'error-box\').className = \'w-full\';document.getElementById(\'spinner-'+
+                row['name'] +
+                '\').className = \'hidden\';}); })()">'+
+                '<div class="hidden" id="spinner-' +
+                row['name'] +
+                '"><div class="animate-spin inline-block w-3 h-3 border-[3px] border-current border-t-transparent text-gray-800 rounded-full dark:text-white" role="status" aria-label="loading">'+
+                '<span class="sr-only">Loading...</span></div></div> Toggle</button>';
         }
     },
 ];
