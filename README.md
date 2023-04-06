@@ -20,6 +20,7 @@ Features
   * Tests
   * In php follow PSR-12
   * In JS follow JavaScript Standard Style
+  * TypeScript
 
 Requirements
 ------------
