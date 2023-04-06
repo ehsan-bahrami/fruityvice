@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\FruitRepository;
+use App\Service\FruitService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -33,13 +34,9 @@ class FruitController extends AbstractController
     }
 
     #[Route('/fruit/toggle-favorite/{name}', name: 'app_fruit_favorite_toggle', requirements: ['name' => '\w+'], methods: ['GET'])]
-    public function toggleFavorite(string $name, FruitRepository $fruitRepository): JsonResponse
+    public function toggleFavorite(string $name, FruitRepository $fruitRepository, FruitService $fruitService): JsonResponse
     {
-        $fruit = $fruitRepository->findOneBy(['name' => $name]);
-
-        $favoriteFruits = $fruitRepository->findByFavoriteField(true);
-
-        if (!$fruit->isFavorite() && count($favoriteFruits) > 9) {
+        if (!$fruitService->canAddToFavoriteFruits($name)) {
             return $this->json(['error' => true], 404);
         }
 
