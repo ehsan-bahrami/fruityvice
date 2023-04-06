@@ -112,10 +112,14 @@ $ ./bin/phpunit
 Screenshots
 ------------
 
-Home page | All fruits
-![homePage](https://user-images.githubusercontent.com/106521330/230403035-b97f95f7-89f5-4e15-9850-5830ac924303.jpg) | ![allFruits](https://user-images.githubusercontent.com/106521330/230403075-be817422-05ca-4230-a3e5-4cc1d0b437af.jpg)
-Favorite fruits | Up to ten limitation
-![favoriteFruits](https://user-images.githubusercontent.com/106521330/230403119-bb9fdbe5-559d-4513-90ec-53b318a62ad2.jpg) | ![upToTenLimitation](https://user-images.githubusercontent.com/106521330/230403169-47ff7369-0737-4774-94df-76c16f3fdc9b.jpg)
+Home page
+![homePage](https://user-images.githubusercontent.com/106521330/230403035-b97f95f7-89f5-4e15-9850-5830ac924303.jpg)
+All fruits
+![allFruits](https://user-images.githubusercontent.com/106521330/230403075-be817422-05ca-4230-a3e5-4cc1d0b437af.jpg)
+Favorite fruits
+![favoriteFruits](https://user-images.githubusercontent.com/106521330/230403119-bb9fdbe5-559d-4513-90ec-53b318a62ad2.jpg)
+Up to ten limitation
+![upToTenLimitation](https://user-images.githubusercontent.com/106521330/230403169-47ff7369-0737-4774-94df-76c16f3fdc9b.jpg)
 
 [1]: https://fruityvice.com/
 [2]: https://symfony.com/doc/current/best_practices.html
